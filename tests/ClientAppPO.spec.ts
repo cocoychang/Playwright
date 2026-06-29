@@ -5,24 +5,25 @@
 import {POManager} from '../pageobjects_ts/POManager_ts';
 
  //Json->string->js object
- const dataset =  JSON.parse(JSON.stringify(require("../utils/placeorderTestData.json")));
+const dataSet = JSON.parse(JSON.stringify(require('../utils/placeOrderTestData.json')));
+
 
  
 
- test(`@Webs Client App login for ${dataset.productName}`, async ({page})=>
+ test(`@Webs Client App login for ${dataSet.productName}`, async ({page})=>
  {
    const poManager = new POManager(page);
     //js file- Login js, DashboardPage
      const products = page.locator(".card-body");
      const loginPage = poManager.getLoginPage();
      await loginPage.goTo();
-     await loginPage.validLogin(dataset.username,dataset.password);
+     await loginPage.validLogin(dataSet.username,dataSet.password);
      const dashboardPage = poManager.getDashboardPage();
-     await dashboardPage.searchProductAddCart(dataset.productName);
+     await dashboardPage.searchProductAddCart(dataSet.productName);
      await dashboardPage.navigateToCart();
 
     const cartPage = poManager.getCartPage();
-    await cartPage.VerifyProductIsDisplayed(dataset.productName);
+    await cartPage.VerifyProductIsDisplayed(dataSet.productName);
     await cartPage.Checkout();
 
     const ordersReviewPage = poManager.getOrdersReviewPage();
