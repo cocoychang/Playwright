@@ -3,6 +3,7 @@ const { devices } = require('@playwright/test');
 
 const config = {
   testDir: './tests',
+  testMatch: /.*\.spec\.ts$/,
   /* Maximum time one test can run for. */
   timeout: 30 * 1000,
   expect: {

@@ -1,4 +1,4 @@
-export class APiUtils
+export class APIUtils
 {
     apiContext:any;
     loginPayLoad:string;
@@ -47,7 +47,7 @@ export class APiUtils
 
 
     }
-module.exports = {APiUtils};
+module.exports = {APIUtils};
 
 
 

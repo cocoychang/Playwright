@@ -2,7 +2,7 @@
  import {test, expect} from '@playwright/test';
  import {customTest} from '../utils_ts/test-base';
 
-import {POManager} from '../pageobjects_ts/POManager';
+import {POManager} from '../pageobjects_ts/POManager_ts';
 
  //Json->string->js object
  const dataset =  JSON.parse(JSON.stringify(require("../utils/placeorderTestData.json")));
