@@ -21,7 +21,12 @@ jobs:
         with:
           node-version: 20
           cache: npm
-
+      - name: Debug repository
+        run: | 
+          echo "Repository contents:"
+          pwd
+          ls -la
+          find . -type f | sort
       - name: Install Dependencies
         run: npm ci
 
