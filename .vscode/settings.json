@@ -1,2 +1,4 @@
 {
+    "chat.disableAIFeatures": false,
+    "chat.permissions.default": "autoApprove"
 }
